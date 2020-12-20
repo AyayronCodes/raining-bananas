@@ -1,0 +1,307 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  position: relative;
+  color: whitesmoke;
+  background-color: rgb(175, 203, 255);
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+}
+
+h1 {
+  font-size: 4.5rem;
+  text-shadow: -4px 0 black, 0 4px black, 4px 0 black, 0 -4px black;
+}
+
+h2 {
+  font-size: 1.5rem;
+  text-shadow: -2px 0 black, 0 2px black, 2px 0 black, 0 -2px black;
+}
+
+button {
+  font-family: "Poppins", sans-serif;
+  font-size: 1.5rem;
+  font-weight: bold;
+  background-color: rgb(175, 203, 255);
+  color: whitesmoke;
+  padding: 0.5em 0.75em;
+  border: 3px solid whitesmoke;
+  border-radius: 10px;
+  cursor: pointer;
+  animation: colorChange 1s infinite;
+  transition: background-color 0.3s;
+}
+
+@keyframes colorChange {
+  0% {
+    color: whitesmoke;
+    border-color: whitesmoke;
+  }
+  50% {
+    color: rgb(255, 255, 143);
+    border-color: rgb(255, 255, 143);
+  }
+  100% {
+    color: whitesmoke;
+    border-color: whitesmoke;
+  }
+}
+
+button:hover {
+  background-color: rgb(65, 65, 65);
+}
+
+button:active {
+  transform: scale(0.98);
+}
+
+.fa-cloud {
+  position: absolute;
+  z-index: -1;
+}
+
+.fa-bolt {
+  color: rgb(255, 212, 95);
+}
+
+.hidden {
+  opacity: 0;
+  display: none;
+}
+
+a {
+  color: inherit;
+}
+
+i {
+  pointer-events: none;
+}
+
+/*  */
+
+.container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  transition: 1s ease-in-out 0.5s;
+}
+header {
+  padding: 2rem 0;
+  text-align: center;
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+}
+
+header h1 {
+  margin-bottom: 0.2em;
+}
+
+header h2 {
+  margin-bottom: 1.5em;
+}
+
+.clouds {
+  position: relative;
+  top: 0;
+  height: 300px;
+}
+
+main {
+  position: relative;
+  background-color: rgb(175, 203, 255);
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+  transition: background-color 0.7s ease-in-out;
+}
+
+main.active {
+  background-color: rgb(20, 20, 20);
+}
+
+.bolts {
+  position: relative;
+  top: -100px;
+  left: -150px;
+  margin: auto;
+  height: 200vh;
+  width: 120vw;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+  transform: rotateZ(-8deg);
+  background-color: rgb(26, 26, 26);
+}
+
+.bolts .fa-bolt:nth-child(2n) {
+  align-self: flex-end;
+}
+
+.banana {
+  position: absolute;
+  left: 500px;
+  top: -250px;
+  z-index: 3;
+  width: 120px;
+  height: 120px;
+  background: url("./banana.png") no-repeat;
+  background-size: contain;
+  /* animation: bananaFall 3s; */
+}
+
+.warhol {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  opacity: 0.98;
+  transform: translateX(-50%);
+  /* display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center; */
+  z-index: 100;
+  transition: 0.6s ease-in 1.5s;
+}
+
+.warhol.hidden {
+  opacity: 0;
+}
+
+/* .warhol .warhol-portrait {
+  width: 40%;
+  min-width: 300px;
+}
+
+.warhol .warhol-portrait-image {
+  max-width: 100%;
+}
+
+.warhol .warhol-quote {
+  width: 80%;
+  min-width: 600px;
+  margin-bottom: 20px;
+}
+
+.warhol .warhol-quote-image {
+  max-width: 100%;
+} */
+
+.warhol .warhol-quote {
+  display: block;
+  width: 400px;
+  margin-bottom: 30px;
+}
+
+.warhol .warhol-portrait {
+  display: block;
+  width: 300px;
+  margin: auto;
+}
+
+.warhol > img {
+  max-width: 100%;
+  background-color: transparent;
+}
+/* 
+.warhol-image {
+  position: absolute;
+  opacity: 0.9;
+  visibility: hidden;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  height: 400px;
+  color: white;
+  background-color: transparent;
+  z-index: 100;
+  transition: visibility 0.4s ease-in;
+}
+.warhol-image.hidden {
+  visibility: hidden;
+} */
+
+.footer {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  padding: 10px 20px;
+  /* border: 3px dotted rgb(26, 26, 26); */
+  min-height: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.footer span {
+  font-size: 1rem;
+  margin-right: 10px;
+}
+
+.footer a {
+  display: inline-block;
+  cursor: pointer;
+  transition: 0.25s ease-in;
+}
+
+.footer a:hover {
+  color: rgb(255, 234, 176);
+  transform: rotateZ(-6deg);
+}
+
+.footer a:active {
+  transform: scale(0.96);
+}
+
+@keyframes iconMove1 {
+  from {
+    transform: translateX(-15px);
+  }
+  to {
+    transform: translateX(15px);
+  }
+}
+
+@keyframes iconMove2 {
+  from {
+    transform: translateX(15px);
+  }
+  to {
+    transform: translateX(-15px);
+  }
+}
+
+@keyframes bananaFall1 {
+  from {
+    top: -250px;
+    transform: rotateZ(0deg);
+  }
+  to {
+    top: 110vh;
+    transform: rotateZ(720deg);
+  }
+}
+@keyframes bananaFall2 {
+  from {
+    top: -250px;
+    transform: rotateZ(0deg);
+  }
+  to {
+    top: 110vh;
+    transform: rotateZ(-720deg);
+  }
+}
+
+@media (max-width: 500px) {
+  .warhol-portrait {
+    width: 450px;
+  }
+}
