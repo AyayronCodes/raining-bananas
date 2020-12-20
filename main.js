@@ -89,4 +89,4 @@ class BananasApp {
   }
 }
 
-const bananasApp = new BananasApp(30, 130);
+const bananasApp = new BananasApp(30, 100);
